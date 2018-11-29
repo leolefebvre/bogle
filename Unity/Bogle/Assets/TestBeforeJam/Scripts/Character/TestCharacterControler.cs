@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class TestCharacterControler : MonoBehaviour
 {
+    [Header("Characters Parameters")]
     public float characterSpeed = 5.0f;
 
-    private float inputX = 0f;
-    private float inputY = 0f;
-    private bool isMoving = false;
+    [Space(20f)]
+    [Header("Internal logic Parameter DON'T TOUCH")]
+    public float inputX = 0f;
+    public float inputY = 0f;
+    public bool isMoving = false;
+    public Vector3 lastMoveVector;
     
     private Animator _characterAnimator;
     public Animator characterAnimator
@@ -45,15 +49,22 @@ public class TestCharacterControler : MonoBehaviour
 
     private void ManageMovement()
     {
-        transform.Translate(inputX * characterSpeed * Time.deltaTime, inputY * characterSpeed * Time.deltaTime, 0f);
+        Vector3 moveVector = new Vector3(inputX, inputY, 0f);
+        moveVector = moveVector.normalized * characterSpeed * Time.deltaTime;
+        transform.Translate(moveVector);
 
         isMoving = (inputX != 0f || inputY != 0f);
+
+        if(isMoving)
+        {
+            lastMoveVector = moveVector;
+        }
     }
 
     private void ManageAnimations()
     {
         characterAnimator.SetBool("isMoving", isMoving);
-        characterAnimator.SetFloat("inputX", inputX);
-        characterAnimator.SetFloat("inputY", inputY);
+        characterAnimator.SetFloat("lastInputX", lastMoveVector.x);
+        characterAnimator.SetFloat("lastInputY", lastMoveVector.y);
     }
 }

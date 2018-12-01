@@ -525,16 +525,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 54889180706554088, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 114991099029636994, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: rotatingSpeed
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
   m_IsPrefabAsset: 0

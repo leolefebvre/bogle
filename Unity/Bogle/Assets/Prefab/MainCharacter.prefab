@@ -173,7 +173,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &65560756909711000
 BoxCollider:
@@ -216,8 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdbd418d09650149adbb29230342a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 5
-  rotatingSpeed: 15
+  walkingSpeed: 10
+  rotatingSpeed: 30
   walkAxis: {x: 1, y: 0, z: 0}
   rotationAxis: {x: 0, y: 0, z: 1}
   walkAnimator: {fileID: 95734378627216566}
@@ -261,7 +261,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 18ad7dcd06229a74b84ada1b051fe6b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e1b9fea6171d4044a24ac7ea9dc2729, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -9,7 +9,7 @@ public enum MovingStates
     rotating = 2
 }
 
-public class CrabControler : MonoBehaviour
+public class CrabControler : Singleton<CrabControler>
 {
     #region externalParameters
 

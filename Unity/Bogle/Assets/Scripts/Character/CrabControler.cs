@@ -17,6 +17,7 @@ public class CrabControler : MonoBehaviour
     public float walkingSpeed = 5.0f;
     public float rotatingSpeed = 5.0f;
 
+    public Vector3 walkAxis = Vector3.right;
     public Vector3 rotationAxis = Vector3.forward;
 
     #endregion
@@ -95,7 +96,7 @@ public class CrabControler : MonoBehaviour
 
     private void EngageWalking()
     {
-        Vector3 walkingVector = Vector3.right * walkingInput * walkingSpeed * Time.deltaTime;
+        Vector3 walkingVector = walkAxis * walkingInput * walkingSpeed * Time.deltaTime;
 
         transform.Translate(walkingVector);
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Zombie : MonoBehaviour
+public class Zombie : BaseEnemy
 {
     private NavMeshAgent _navAgent;
     public NavMeshAgent navAgent

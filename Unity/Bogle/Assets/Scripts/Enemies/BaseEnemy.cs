@@ -31,6 +31,7 @@ public class BaseEnemy : MonoBehaviour
 
     public void Die()
     {
+        CameraShakeControler.Instance.LaunchShake(ShakeTypes.big);
         Destroy(gameObject);
     }
 }

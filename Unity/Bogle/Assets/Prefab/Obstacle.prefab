@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 65920004360781412}
   m_Layer: 0
   m_Name: NavmeshObstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1766039923843486
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212108709468172024}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a0789b2985dc88d49b514d21481da817, type: 3}
+  m_Sprite: {fileID: 21300070, guid: a0789b2985dc88d49b514d21481da817, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

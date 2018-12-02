@@ -32,6 +32,6 @@ public class CannonControler : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
 
-        projectile.GetComponent<Projectile>().Launch(maxRange);
+        projectile.GetComponent<Projectile>().Launch(maxRange, Team.Player);
     }
 }

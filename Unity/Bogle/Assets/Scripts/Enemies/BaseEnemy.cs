@@ -17,4 +17,9 @@ public class BaseEnemy : MonoBehaviour
 	void Update () {
 		
 	}
+
+    public void TakeHit(int damage)
+    {
+
+    }
 }

@@ -200,7 +200,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -275,10 +275,11 @@ MonoBehaviour:
   rotationAxis: {x: 0, y: 0, z: 1}
   projectilePrefab: {fileID: 1054291223193000, guid: 2e098d90774e6454fa28760045af2e6c,
     type: 2}
-  baseRange: 5
+  baseRange: 50
   baseFireRate: 5
   walkAnimator: {fileID: 95734378627216566}
   cannon1: {fileID: 114219465271187994}
+  cannon2: {fileID: 114621342076109500}
   walkingInput: 0
   rotatingInput: 0
   shootInput: 0

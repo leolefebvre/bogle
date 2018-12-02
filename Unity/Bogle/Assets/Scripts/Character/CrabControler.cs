@@ -27,6 +27,7 @@ public class CrabControler : Singleton<CrabControler>
     [Header("References")]
     public Animator walkAnimator;
     public CannonControler cannon1;
+    public CannonControler cannon2;
 
     #endregion
 
@@ -126,6 +127,7 @@ public class CrabControler : Singleton<CrabControler>
         if(shootInput != 0f && (Time.time - lastTimeShots) > timeBetweenShots)
         {
             cannon1.Fire(currentRange);
+            cannon2.Fire(currentRange);
             lastTimeShots = Time.time;
         }
     }
@@ -140,4 +142,11 @@ public class CrabControler : Singleton<CrabControler>
     }
 
     #endregion
+
+
+
+    public void TakeHit(int damage)
+    {
+
+    }
 }

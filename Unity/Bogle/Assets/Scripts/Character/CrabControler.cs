@@ -18,11 +18,12 @@ public class CrabControler : Singleton<CrabControler>
     public float baseRange = 100f;
     [Tooltip("In number of bullets per seconds")]
     public float baseFireRate = 5f;
+    public ShakeTypes shakeOnFire = ShakeTypes.fireShake;
 
     [Header("Characters Health Parameters")]
     public int baseHealth = 3;
-
     public float invincibilityDuration = 1.0f;
+    public ShakeTypes shakeOnTakingHits = ShakeTypes.playerTakesHitShake;
 
     #endregion
 
@@ -45,6 +46,12 @@ public class CrabControler : Singleton<CrabControler>
     public float shootInput = 0f;
     public bool isMoving = false;
     public bool isInvincible = false;
+    
+    public bool isDead
+    {
+        get { return currentHealth <= 0; }
+
+    }
 
     private float currentRange = 100f;
     private float currentFireRate = 1.0f;
@@ -74,6 +81,11 @@ public class CrabControler : Singleton<CrabControler>
     // Update is called once per frame
     void Update()
     {
+        if(isDead)
+        {
+            return;
+        }
+
         ManageInputs();
 
         ManageMovement();
@@ -146,7 +158,7 @@ public class CrabControler : Singleton<CrabControler>
             cannon2.Fire(currentRange);
             lastTimeShots = Time.time;
 
-            CameraShakeControler.Instance.LaunchShake(ShakeTypes.fireShake);
+            CameraShakeControler.Instance.LaunchShake(shakeOnFire);
         }
     }
 
@@ -174,7 +186,10 @@ public class CrabControler : Singleton<CrabControler>
         Debug.Log("Taking hits");
         currentHealth -= damage;
 
-        if(currentHealth <= 0)
+        HealthDisplayManager.Instance.RemoveOneHeart();
+        CameraShakeControler.Instance.LaunchShake(shakeOnTakingHits);
+
+        if (currentHealth <= 0)
         {
             Die();
             return;
@@ -194,7 +209,7 @@ public class CrabControler : Singleton<CrabControler>
 
     public void Die ()
     {
-
+        DeathScreenManager.Instance.LaunchDeathUI();
     }
 
     #endregion

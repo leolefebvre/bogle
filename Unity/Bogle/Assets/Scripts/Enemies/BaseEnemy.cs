@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
 {
-    public int startedHealth = 1;
-
+    public int baseHealth = 1;
     protected int currentHealth;
 
     public float deathAnimationDuration;
     public Animator animator;
+    public ShakeTypes shakeOnDeath;
+
+    private bool isDead = false;
     
 	// Use this for initialization
 	void Start () {
-        currentHealth = startedHealth;
+        currentHealth = baseHealth;
 	}
 	
 	// Update is called once per frame
@@ -32,9 +34,26 @@ public class BaseEnemy : MonoBehaviour
     }
 
 
-    public void Die()
+    public virtual void Die()
     {
-        CameraShakeControler.Instance.LaunchShake(ShakeTypes.big);
+        if(isDead)
+        {
+            return;
+        }
+
+        isDead = true;
+
+        GetComponent<Collider>().enabled = false;
+        CameraShakeControler.Instance.LaunchShake(shakeOnDeath);
+        animator.SetTrigger("DeathTrigger");
+
+        StartCoroutine(DeleteCharacter());
+    }
+
+    IEnumerator DeleteCharacter()
+    {
+        yield return new WaitForSeconds(deathAnimationDuration);
+
         Destroy(gameObject);
     }
 }

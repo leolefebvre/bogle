@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4795240821815842, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -6.29
+      value: -11.8
       objectReference: {fileID: 0}
     - target: {fileID: 4795240821815842, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -151,6 +151,18 @@ Prefab:
     - target: {fileID: 4795240821815842, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564786098125848, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564786098125848, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736581790050952, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
@@ -322,7 +334,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1454104476}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.07, y: 10.104001, z: -6.2900033}
+  m_LocalPosition: {x: 1.07, y: 10.104001, z: -11.800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1327065903}
@@ -423,7 +435,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1488842736}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.07, y: 10.104001, z: -6.2900033}
+  m_LocalPosition: {x: 1.07, y: 10.104001, z: -11.800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2060423580}
@@ -479,10 +491,10 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.49999988
+  m_ScreenY: 0.4999999
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.2882353
-  m_DeadZoneHeight: 0.2552239
+  m_DeadZoneHeight: 0.2883994
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8

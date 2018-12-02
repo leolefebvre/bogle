@@ -32,4 +32,10 @@ public class Zombie : BaseEnemy
     {
         navAgent.destination = CrabControler.Instance.transform.position;
     }
+
+    public override void Die()
+    {
+        navAgent.isStopped = true;
+        base.Die();
+    }
 }

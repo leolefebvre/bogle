@@ -145,7 +145,7 @@ public class CrabControler : Singleton<CrabControler>
             cannon2.Fire(currentRange);
             lastTimeShots = Time.time;
 
-            CameraShakeControler.Instance.LaunchShake(ShakeTypes.small);
+            CameraShakeControler.Instance.LaunchShake(ShakeTypes.fireShake);
         }
     }
 

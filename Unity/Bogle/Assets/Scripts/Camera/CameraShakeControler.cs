@@ -5,9 +5,10 @@ using Cinemachine;
 
 public enum ShakeTypes
 {
-    small,
-    medium,
-    big
+    fireShake,
+    playerTakesHitShake,
+    ennemyDeathShake,
+    noShake
 }
 
 [System.Serializable]

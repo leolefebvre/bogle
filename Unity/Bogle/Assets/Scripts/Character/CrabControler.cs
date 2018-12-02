@@ -9,6 +9,7 @@ public class CrabControler : Singleton<CrabControler>
     [Header("Characters Movements Parameters")]
     public float baseWalkingSpeed = 5.0f;
     public float baseRotatingSpeed = 5.0f;
+    public float speedFactorWhenShooting = 0.5f;
 
     public Vector3 walkAxis = Vector3.right;
     public Vector3 rotationAxis = Vector3.forward;
@@ -148,22 +149,27 @@ public class CrabControler : Singleton<CrabControler>
 
     private void EngageRotation()
     {
-         float rotationSide = 1f;
-
+        float rotationSide = 1f;
+        
         // if press up and right or press down and left, then rotate counter clockwise
         // else rotate clockwise
         if((rotatingInput < 0f && walkingInput > 0f) || (rotatingInput > 0f && walkingInput < 0f))
         {
             rotationSide = -1f;
         }
-        float rotationAngle = rotationSide * currentRotatingSpeed * Time.deltaTime;
+
+        float shootingSpeedModifier = shootInput != 0 ? speedFactorWhenShooting : 1f;
+
+        float rotationAngle = rotationSide * currentRotatingSpeed * Time.deltaTime * shootingSpeedModifier;
 
         transform.Rotate(rotationAxis, rotationAngle);
     }
 
     private void EngageWalking()
     {
-        Vector3 walkingVector = walkAxis * walkingInput * currentWalkingSpeed * Time.deltaTime;
+        float shootingSpeedModifier = shootInput != 0 ? speedFactorWhenShooting : 1f;
+
+        Vector3 walkingVector = walkAxis * walkingInput * currentWalkingSpeed * Time.deltaTime * shootingSpeedModifier;
 
         transform.Translate(walkingVector);
     }
@@ -204,8 +210,6 @@ public class CrabControler : Singleton<CrabControler>
         {
             return;
         }
-
-        Debug.Log("Taking hits");
         currentHealth -= damage;
 
         HealthDisplayManager.Instance.RemoveOneHeart();

@@ -16,7 +16,6 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
 	void Start ()
     {
         Initialise();
-
     }
 	
 	// Update is called once per frame
@@ -29,6 +28,11 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
     {
         DisableConfirmButton();
         transitionCanvas.SetActive(false);
+
+        foreach(ChoiceUI choice in choicesUi)
+        {
+            choice.Reset();
+        }
     }
 
     public void DisableConfirmButton()

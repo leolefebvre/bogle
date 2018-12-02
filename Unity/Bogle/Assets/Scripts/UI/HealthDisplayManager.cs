@@ -13,8 +13,8 @@ public class HealthDisplayManager : Singleton<HealthDisplayManager>, IResetable
     
 	// Use this for initialization
 	void Start () {
-		
-	}
+        Reset();
+    }
 	
 	// Update is called once per frame
 	void Update () {

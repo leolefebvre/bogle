@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 136808576164623816}
   m_Layer: 9
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 212494775983067280}
   m_Layer: 9
   m_Name: CharacterBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 114219465271187994}
   m_Layer: 9
   m_Name: Cannon 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4718991686055748}
   m_Layer: 9
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 114621342076109500}
   m_Layer: 9
   m_Name: Cannon 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981178863935612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 0.88000023, z: 0}
+  m_LocalPosition: {x: -1.15, y: 0.88, z: -3}
   m_LocalScale: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 4795240821815842}
@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713720353544534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4319494324502216}
@@ -168,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601988683454484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.28, y: 0.92, z: -0}
+  m_LocalPosition: {x: 1.28, y: 0.92, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4795240821815842}
@@ -180,8 +180,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053829936004728}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.07, y: 0.104, z: -6.29}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4736581790050952}
@@ -257,14 +257,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdbd418d09650149adbb29230342a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 10
-  rotatingSpeed: 60
+  baseWalkingSpeed: 15
+  baseRotatingSpeed: 100
+  speedFactorWhenShooting: 0.66
   walkAxis: {x: 1, y: 0, z: 0}
   rotationAxis: {x: 0, y: 0, z: 1}
   projectilePrefab: {fileID: 1054291223193000, guid: 2e098d90774e6454fa28760045af2e6c,
     type: 2}
   baseRange: 50
   baseFireRate: 5
+  shakeOnFire: 0
+  baseHealth: 3
+  invincibilityDuration: 0.25
+  shakeOnTakingHits: 1
   walkAnimator: {fileID: 95734378627216566}
   cannon1: {fileID: 114219465271187994}
   cannon2: {fileID: 114621342076109500}
@@ -272,10 +277,12 @@ MonoBehaviour:
   rotatingInput: 0
   shootInput: 0
   isMoving: 0
+  isInvincible: 0
+  currentHealth: 3
   currentRange: 100
   currentFireRate: 1
-  lastTimeShots: 0
-  rotationSide: 1
+  currentWalkingSpeed: 5
+  currentRotatingSpeed: 5
 --- !u!136 &136808576164623816
 CapsuleCollider:
   m_ObjectHideFlags: 1

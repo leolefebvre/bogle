@@ -6,15 +6,31 @@ public class BaseEnemy : MonoBehaviour
 {
     public int startedHealth = 1;
 
-    protected int _currentHealth;
+    protected int currentHealth;
 
 	// Use this for initialization
 	void Start () {
-        _currentHealth = startedHealth;
+        currentHealth = startedHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void TakeHit(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }

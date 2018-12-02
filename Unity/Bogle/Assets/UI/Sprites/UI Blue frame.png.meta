@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: f03b35a7a94dfa54d87c10b87ac7622d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: UI Blue frame_0
+    21300002: UI Blue frame_1
+    21300004: UI Blue frame_2
+    21300006: UI Blue frame_3
+    21300008: UI Blue frame_4
+    21300010: UI Blue frame_5
+    21300012: UI Blue frame_6
+    21300014: UI Blue frame_7
+    21300016: UI Blue frame_8
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -82,11 +91,191 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI Blue frame_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1086.6667
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71706aa3d73bb404798e9f660d9b2c12
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_1
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1086.6667
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec2ad0bf45ad70479011f5459d6bc28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_2
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1086.6667
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c73f498e7aa0a4d8ece6d0636a75a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543.6667
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d89a5a8634741d47a3630b5251ab4a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_4
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 543.6667
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdd344b13144784b83eb920a2b7a19c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_5
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 543.6667
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3a72654e4929c40b6367a18b50b15a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.666687
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae3b688f6be1084c8807980693684ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_7
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0.666687
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a7b85dca8c48e4ab56a37de1560dea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Blue frame_8
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 0.666687
+        width: 386.66666
+        height: 543.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269940dc6a8609b41b0b4bb3a53ecabe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e4c432c644aee294aad44317f3facdd5
     vertices: []
     indices: 
     edges: []

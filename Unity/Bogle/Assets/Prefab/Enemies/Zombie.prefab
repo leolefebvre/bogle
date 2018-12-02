@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  deathAnimationDuration: 5
+  deathAnimationDuration: 1.6
   animator: {fileID: 95758441708774968}
   shakeOnDeath: 2
   AttackDamage: 1

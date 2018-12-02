@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423474077421672}
   m_LocalRotation: {x: -0, y: 0.7048646, z: -0, w: 0.70934194}
-  m_LocalPosition: {x: 0.7, y: -0, z: 0.4}
+  m_LocalPosition: {x: -31.577696, y: 1.9999986, z: -14.403296}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4707092518462772}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  deathAnimationDuration: 2
+  deathAnimationDuration: 0.75
   animator: {fileID: 95062129776249314}
   shakeOnDeath: 2
 --- !u!136 &136004836984363632
@@ -196,7 +196,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f87ef71db605389479f07ea4d33b654e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f42f70916be6c14d960b59729aba31f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

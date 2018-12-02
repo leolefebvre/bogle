@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthDisplayManager : Singleton<HealthDisplayManager>
+public class HealthDisplayManager : Singleton<HealthDisplayManager>, IResetable
 {
     public List<Image> healthImagesRefs;
-    
+
+    public Sprite fullHeart;
     public Sprite emptyHeartSprite;
 
     private int lastHeartLost = 0;
@@ -30,5 +31,15 @@ public class HealthDisplayManager : Singleton<HealthDisplayManager>
 
         healthImagesRefs[lastHeartLost].sprite = emptyHeartSprite;
         lastHeartLost++;
+    }
+
+    public void Reset()
+    {
+        foreach(Image heartImage in healthImagesRefs)
+        {
+            heartImage.sprite = fullHeart;
+        }
+
+        lastHeartLost = 0;
     }
 }

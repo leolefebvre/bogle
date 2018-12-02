@@ -46,6 +46,9 @@ public class CrabControler : Singleton<CrabControler>
     public float shootInput = 0f;
     public bool isMoving = false;
     public bool isInvincible = false;
+
+    private Vector3 basePosition;
+    private Quaternion baseRotation;
     
     public bool isDead
     {
@@ -68,6 +71,8 @@ public class CrabControler : Singleton<CrabControler>
     // Use this for initialization
     void Start()
     {
+        basePosition = transform.position;
+        baseRotation = transform.rotation;
         Initialize();
     }
 
@@ -76,6 +81,20 @@ public class CrabControler : Singleton<CrabControler>
         currentRange = baseRange;
         currentFireRate = baseFireRate;
         currentHealth = baseHealth;
+
+        walkingInput = 0f;
+        rotatingInput = 0f;
+        shootInput = 0f;
+        isMoving = false;
+        isInvincible = false;
+        lastTimeShots = 0f;
+    }
+
+    public void Reset()
+    {
+        Initialize();
+        transform.position = basePosition;
+        transform.rotation = baseRotation;
     }
 
     // Update is called once per frame

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathScreenManager : Singleton<DeathScreenManager>
+public class DeathScreenManager : Singleton<DeathScreenManager>, IResetable
 {
     public GameObject deathUiCanvas;
 
 	// Use this for initialization
 	void Start () {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         deathUiCanvas.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void LaunchDeathUI()
     {
@@ -23,6 +23,11 @@ public class DeathScreenManager : Singleton<DeathScreenManager>
 
     public void RestartClicked()
     {
-        Debug.Log("RestartClicked");
+        GameManager.Instance.RestartGame();
+    }
+
+    public void Reset()
+    {
+        Initialize();
     }
 }

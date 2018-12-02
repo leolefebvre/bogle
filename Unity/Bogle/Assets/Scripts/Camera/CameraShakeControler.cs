@@ -40,7 +40,7 @@ public class CameraShakeControler : Singleton<CameraShakeControler>
         {
             if(_virtualCameraNoise == null)
             {
-                _virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+                _virtualCameraNoise = VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
             }
             return _virtualCameraNoise;
         }

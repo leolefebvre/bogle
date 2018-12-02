@@ -49,6 +49,8 @@ public class CrabControler : Singleton<CrabControler>
         get { return 1f / currentFireRate; }
     }
 
+    public float rotationSide = 1f;
+
     #endregion
 
     // Use this for initialization
@@ -106,7 +108,20 @@ public class CrabControler : Singleton<CrabControler>
 
     private void EngageRotation()
     {
-        float rotationAngle = rotatingInput * rotatingSpeed * Time.deltaTime;
+
+
+        // if press up and right or press down and left, then rotate counter clockwise
+        // else rotate clockwise
+        if((rotatingInput < 0f && walkingInput > 0f) || (rotatingInput > 0f && walkingInput < 0f))
+        {
+            rotationSide = -1f;
+        }
+        else
+        {
+            rotationSide = 1f;
+        }
+
+        float rotationAngle = rotationSide * rotatingSpeed * Time.deltaTime;
 
         transform.Rotate(rotationAxis, rotationAngle);
     }

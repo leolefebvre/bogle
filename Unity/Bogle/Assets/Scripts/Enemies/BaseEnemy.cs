@@ -8,6 +8,9 @@ public class BaseEnemy : MonoBehaviour
 
     protected int currentHealth;
 
+    public float deathAnimationDuration;
+    public Animator animator;
+    
 	// Use this for initialization
 	void Start () {
         currentHealth = startedHealth;

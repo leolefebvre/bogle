@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4637099418733754}
-  - component: {fileID: 65560756909711000}
+  - component: {fileID: 136808576164623816}
   m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
@@ -140,13 +140,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265126136015214}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4795240821815842}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4718991686055748
 Transform:
   m_ObjectHideFlags: 1
@@ -168,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601988683454484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.38, y: 0.88, z: -0}
+  m_LocalPosition: {x: 1.28, y: 0.92, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4795240821815842}
@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1053829936004728}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.07, y: 0.104, z: 0.85}
+  m_LocalPosition: {x: 1.07, y: 0.104, z: -6.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4736581790050952}
@@ -206,18 +206,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &65560756909711000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1265126136015214}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.130608, y: 3.53, z: 1.5897193}
-  m_Center: {x: 0, y: -0.11320316, z: 0.6374398}
 --- !u!95 &95734378627216566
 Animator:
   serializedVersion: 3
@@ -287,6 +275,20 @@ MonoBehaviour:
   currentRange: 100
   currentFireRate: 1
   lastTimeShots: 0
+  rotationSide: 1
+--- !u!136 &136808576164623816
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265126136015214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.8204259
+  m_Height: 3.2350483
+  m_Direction: 0
+  m_Center: {x: -0.018329859, y: -0.65000856, z: -2.1317515e-15}
 --- !u!212 &212494775983067280
 SpriteRenderer:
   m_ObjectHideFlags: 1

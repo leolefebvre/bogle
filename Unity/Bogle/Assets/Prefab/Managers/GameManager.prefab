@@ -51,9 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92499673e3ca9f42924c76facd55232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGameState: 1
-  cinemachineCamera: {fileID: 0}
-  cameraFocusTime: 0.1
   levelNameOrder:
   - LeosLevel
   - LeosLevel 2
@@ -63,6 +60,11 @@ MonoBehaviour:
   - LeosLevel 2
   - LeosLevel
   - LeosLevel 2
+  cinemachineCamera: {fileID: 0}
+  cameraFocusTime: 0.1
+  defaultYPosition: 0
+  defaultRotation: {x: 90, y: 0, z: 0}
+  currentGameState: 1
   baseEnemyCount: 0
   currentEnemyCount: 0
   currentLevel: 0

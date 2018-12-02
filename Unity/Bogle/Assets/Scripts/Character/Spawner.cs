@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : Singleton<Spawner>
+public class Spawner : MonoBehaviour
 {
 
 	// Use this for initialization

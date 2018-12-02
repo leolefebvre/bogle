@@ -13,16 +13,22 @@ public enum GameState
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameState currentGameState = GameState.arena;
-    public CinemachineVirtualCamera cinemachineCamera;
-    public float cameraFocusTime = 0.1f;
-
-    public float defaultZPosition;
-
+    [Header("Level Order Parameter")]
     public List<string> levelNameOrder;
 
+    [Header("Camera Reset parameters")]
+    public CinemachineVirtualCamera cinemachineCamera;
     private Vector2 defaultSoftZoneParameters;
+    public float cameraFocusTime = 0.1f;
 
+    [Header("Character Reset parameter")]
+    public float defaultYPosition = 0f;
+    public Vector3 defaultRotation;    
+
+    [Space(20f)]
+    [Header("Internal logic Parameter DON'T TOUCH")]
+
+    public GameState currentGameState = GameState.arena;
     public int baseEnemyCount = 0;
     public int currentEnemyCount = 0;
 
@@ -79,8 +85,7 @@ public class GameManager : Singleton<GameManager>
     public void ResetCommonScene()
     {
         CrabControler.Instance.Reset();
-
-
+        
         var allResetables = FindObjectsOfType<MonoBehaviour>().OfType<IResetable>();
         foreach (IResetable resetable in allResetables)
         {
@@ -105,15 +110,31 @@ public class GameManager : Singleton<GameManager>
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
         InitializeLevel();
-        SetGameState(GameState.arena);
     }
 
     private void InitializeLevel()
     {
         CountNumberOfEnnemies();
         DeathScreenManager.Instance.Reset();
-        
-       // FindObjectOfType<Spawner>().transform.position
+
+        Vector3 spawnPosition = GetSpawnerPosition();
+        spawnPosition.y = defaultYPosition;
+
+        CrabControler.Instance.transform.position = spawnPosition;
+        CrabControler.Instance.transform.eulerAngles = defaultRotation;
+
+        SetGameState(GameState.arena);
+    }
+
+    private Vector3 GetSpawnerPosition()
+    {
+        Spawner spawner = FindObjectOfType<Spawner>();
+
+        if(spawner == null)
+        {
+            return Vector3.zero;
+        }
+        return spawner.transform.position;
     }
 
     public void CountNumberOfEnnemies()

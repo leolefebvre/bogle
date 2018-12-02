@@ -828,6 +828,8 @@ MonoBehaviour:
   levelNameOrder:
   - LeosLevel
   - LeosLevel 2
+  baseEnnemyCount: 0
+  currentEnnemyCount: 0
 --- !u!4 &1149168804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4795240821815842, guid: 1f704ba356f3d01408bc1024f7af6ee0,

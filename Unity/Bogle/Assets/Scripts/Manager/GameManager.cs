@@ -21,6 +21,9 @@ public class GameManager : Singleton<GameManager>
 
     private Vector2 defaultSoftZoneParameters;
 
+    public int baseEnnemyCount = 0;
+    public int currentEnnemyCount = 0;
+
     private CinemachineFramingTransposer _cameraBody;
     public CinemachineFramingTransposer cameraBody
     {
@@ -38,7 +41,16 @@ public class GameManager : Singleton<GameManager>
     void Start ()
     {
         Initialize();
-	}
+
+        if(SceneManager.sceneCount > 1)
+        {
+            InitializeLevel();
+        }
+        else
+        {
+            RestartGame();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,13 +59,14 @@ public class GameManager : Singleton<GameManager>
 
     public void Initialize()
     {
+        SceneManager.sceneLoaded += OnLevelLoaded;
+
         defaultSoftZoneParameters.x = cameraBody.m_SoftZoneWidth;
         defaultSoftZoneParameters.y = cameraBody.m_SoftZoneHeight;
     }
 
     public void RestartGame()
     {
-        Debug.Log("Reload " + SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(levelNameOrder[0]);
 
         ResetCommonScene();
@@ -83,5 +96,22 @@ public class GameManager : Singleton<GameManager>
 
         cameraBody.m_SoftZoneWidth = defaultSoftZoneParameters.x;
         cameraBody.m_SoftZoneHeight = defaultSoftZoneParameters.y;
+    }
+
+    private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InitializeLevel();
+    }
+
+    private void InitializeLevel()
+    {
+        Debug.Log("Initlalize Level");
+
+        CountNumberOfEnnemies();
+    }
+
+    public void CountNumberOfEnnemies()
+    {
+        baseEnnemyCount = FindObjectsOfType<BaseEnemy>().Count();
     }
 }

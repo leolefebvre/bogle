@@ -9,6 +9,7 @@ public class CrabControler : Singleton<CrabControler>
     [Header("Characters Movements Parameters")]
     public float baseWalkingSpeed = 5.0f;
     public float baseRotatingSpeed = 5.0f;
+    public float speedFactorWhenShooting = 0.5f;
 
     public Vector3 walkAxis = Vector3.right;
     public Vector3 rotationAxis = Vector3.forward;
@@ -204,8 +205,6 @@ public class CrabControler : Singleton<CrabControler>
         {
             return;
         }
-
-        Debug.Log("Taking hits");
         currentHealth -= damage;
 
         HealthDisplayManager.Instance.RemoveOneHeart();

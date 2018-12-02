@@ -78,6 +78,7 @@ public class GameManager : Singleton<GameManager>
     public void RestartGame()
     {
         SceneManager.LoadScene(levelNameOrder[0]);
+        currentLevel = 0;
 
         ResetCommonScene();
     }
@@ -164,7 +165,14 @@ public class GameManager : Singleton<GameManager>
     {
         SetGameState(GameState.menu);
 
-        TransitionScreenManager.Instance.LaunchTransitionUI();
+        if(currentLevel == levelNameOrder.Count - 1)
+        {
+            VictoryScreenManager.Instance.LaunchVictoryUI();
+        }
+        else
+        {
+            TransitionScreenManager.Instance.LaunchTransitionUI();
+        }
     }
 
     public void LoadNextLevel()

@@ -42,7 +42,6 @@ public class ChoiceUI : MonoBehaviour, IResetable
 
     public void Reset()
     {
-        Debug.Log("Reset");
         foreach(Image image in tickedBoxes)
         {
             image.enabled = false;

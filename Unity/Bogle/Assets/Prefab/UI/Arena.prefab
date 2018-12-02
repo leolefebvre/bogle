@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4394099460789868}
+  - component: {fileID: 114173344657888532}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -52,7 +53,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224531641167945668}
   - component: {fileID: 114216284705500922}
-  - component: {fileID: 114822274605362366}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -126,6 +126,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114173344657888532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442735772266034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f11d8148fabf4488c82a350cef71e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthImagesRefs:
+  - {fileID: 114192088803134446}
+  - {fileID: 114419195136048016}
+  - {fileID: 114634819374889862}
+  fullHeart: {fileID: 21300000, guid: ba19eb5e6cfa7ee42ac3a00009fa40ba, type: 3}
 --- !u!114 &114192088803134446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +161,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dfcee165646315f47a3c50806ace4f0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d37350bb4ad2ff4ea9f2d6581a73ef4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -172,7 +188,7 @@ MonoBehaviour:
   m_ChildAlignment: 7
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 82.5, y: 60}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -211,7 +227,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dfcee165646315f47a3c50806ace4f0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d37350bb4ad2ff4ea9f2d6581a73ef4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -238,7 +254,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dfcee165646315f47a3c50806ace4f0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d37350bb4ad2ff4ea9f2d6581a73ef4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -267,23 +283,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114822274605362366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1798929542215824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f11d8148fabf4488c82a350cef71e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthImagesRefs:
-  - {fileID: 114192088803134446}
-  - {fileID: 114419195136048016}
-  - {fileID: 114634819374889862}
-  fullHeart: {fileID: 21300000, guid: dfcee165646315f47a3c50806ace4f0a, type: 3}
-  emptyHeartSprite: {fileID: 0}
 --- !u!222 &222027479324732198
 CanvasRenderer:
   m_ObjectHideFlags: 1

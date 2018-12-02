@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Zombie : BaseEnemy
 {
+    public int AttackDamage = 1;
+
     private NavMeshAgent _navAgent;
     public NavMeshAgent navAgent
     {
@@ -30,12 +32,30 @@ public class Zombie : BaseEnemy
 
     private void ChasePlayer()
     {
-        navAgent.destination = CrabControler.Instance.transform.position;
+        if(!isDead)
+        {
+            navAgent.destination = CrabControler.Instance.transform.position;
+        }
     }
 
     public override void Die()
     {
-        navAgent.isStopped = true;
+        navAgent.enabled = false;
+
         base.Die();
+    }
+
+    public void DamagePlayer()
+    {
+        CrabControler.Instance.TakeHit(AttackDamage);
+        Die();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            DamagePlayer();
+        }
     }
 }

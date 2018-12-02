@@ -11,7 +11,7 @@ public class BaseEnemy : MonoBehaviour
     public Animator animator;
     public ShakeTypes shakeOnDeath;
 
-    private bool isDead = false;
+    protected bool isDead = false;
     
 	// Use this for initialization
 	void Start () {
@@ -44,6 +44,7 @@ public class BaseEnemy : MonoBehaviour
         isDead = true;
 
         GetComponent<Collider>().enabled = false;
+
         CameraShakeControler.Instance.LaunchShake(shakeOnDeath);
         animator.SetTrigger("DeathTrigger");
 

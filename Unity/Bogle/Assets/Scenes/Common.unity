@@ -214,6 +214,26 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1425665327092510, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265126136015214, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713720353544534, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981178863935612, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601988683454484, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
   m_IsPrefabAsset: 0

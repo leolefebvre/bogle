@@ -51,7 +51,6 @@ public class CrabControler : Singleton<CrabControler>
     private int currentHealth = 3;
 
     private float lastTimeShots = 0f;
-    private float lastTImetakingHits = 0f;
     public float timeBetweenShots
     {
         get { return 1f / currentFireRate; }
@@ -157,8 +156,6 @@ public class CrabControler : Singleton<CrabControler>
 
     private void ManageAnimations()
     {
-        Debug.Log("animations");
-
         walkAnimator.SetBool("isMoving", isMoving);
         walkAnimator.SetBool("isInvincible", isInvincible);
     }

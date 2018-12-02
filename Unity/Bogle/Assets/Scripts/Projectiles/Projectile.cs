@@ -84,8 +84,6 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(name + " hits " + other.name);
-
         if(other.tag == "Obstacle")
         {
             ProjectileHits();

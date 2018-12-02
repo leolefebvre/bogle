@@ -7,8 +7,8 @@ public class CrabControler : Singleton<CrabControler>
     #region externalParameters
 
     [Header("Characters Movements Parameters")]
-    public float walkingSpeed = 5.0f;
-    public float rotatingSpeed = 5.0f;
+    public float baseWalkingSpeed = 5.0f;
+    public float baseRotatingSpeed = 5.0f;
 
     public Vector3 walkAxis = Vector3.right;
     public Vector3 rotationAxis = Vector3.forward;
@@ -53,12 +53,13 @@ public class CrabControler : Singleton<CrabControler>
     public bool isDead
     {
         get { return currentHealth <= 0; }
-
     }
 
-    private float currentRange = 100f;
-    private float currentFireRate = 1.0f;
-    private int currentHealth = 3;
+    public int currentHealth = 3;
+    public float currentRange = 100f;
+    public float currentFireRate = 1.0f;
+    public float currentWalkingSpeed = 5.0f;
+    public float currentRotatingSpeed = 5.0f;
 
     private float lastTimeShots = 0f;
     public float timeBetweenShots
@@ -81,6 +82,8 @@ public class CrabControler : Singleton<CrabControler>
         currentRange = baseRange;
         currentFireRate = baseFireRate;
         currentHealth = baseHealth;
+        currentWalkingSpeed = baseWalkingSpeed;
+        currentRotatingSpeed = baseRotatingSpeed;
 
         walkingInput = 0f;
         rotatingInput = 0f;
@@ -100,7 +103,7 @@ public class CrabControler : Singleton<CrabControler>
     // Update is called once per frame
     void Update()
     {
-        if(isDead)
+        if(isDead || GameManager.Instance.currentGameState != GameState.arena)
         {
             return;
         }
@@ -153,14 +156,14 @@ public class CrabControler : Singleton<CrabControler>
         {
             rotationSide = -1f;
         }
-        float rotationAngle = rotationSide * rotatingSpeed * Time.deltaTime;
+        float rotationAngle = rotationSide * currentRotatingSpeed * Time.deltaTime;
 
         transform.Rotate(rotationAxis, rotationAngle);
     }
 
     private void EngageWalking()
     {
-        Vector3 walkingVector = walkAxis * walkingInput * walkingSpeed * Time.deltaTime;
+        Vector3 walkingVector = walkAxis * walkingInput * currentWalkingSpeed * Time.deltaTime;
 
         transform.Translate(walkingVector);
     }
@@ -228,7 +231,7 @@ public class CrabControler : Singleton<CrabControler>
 
     public void Die ()
     {
-        DeathScreenManager.Instance.LaunchDeathUI();
+        GameManager.Instance.ManageCharacterDeath();
     }
 
     #endregion

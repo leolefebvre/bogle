@@ -8,7 +8,6 @@ public class HealthDisplayManager : Singleton<HealthDisplayManager>, IResetable
     public List<Image> healthImagesRefs;
 
     public Sprite fullHeart;
-    public Sprite emptyHeartSprite;
 
     private int lastHeartLost = 0;
     
@@ -29,7 +28,7 @@ public class HealthDisplayManager : Singleton<HealthDisplayManager>, IResetable
             return;
         }
 
-        healthImagesRefs[lastHeartLost].sprite = emptyHeartSprite;
+        healthImagesRefs[lastHeartLost].enabled = false;
         lastHeartLost++;
     }
 
@@ -37,6 +36,7 @@ public class HealthDisplayManager : Singleton<HealthDisplayManager>, IResetable
     {
         foreach(Image heartImage in healthImagesRefs)
         {
+            heartImage.enabled = true;
             heartImage.sprite = fullHeart;
         }
 

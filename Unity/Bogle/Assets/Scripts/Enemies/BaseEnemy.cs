@@ -33,6 +33,10 @@ public class BaseEnemy : MonoBehaviour
         }
     }
 
+    public virtual void Stop()
+    {
+        GetComponent<Collider>().enabled = false;
+    }
 
     public virtual void Die()
     {
@@ -40,13 +44,15 @@ public class BaseEnemy : MonoBehaviour
         {
             return;
         }
-
+        
         isDead = true;
 
-        GetComponent<Collider>().enabled = false;
+        Stop();
 
         CameraShakeControler.Instance.LaunchShake(shakeOnDeath);
         animator.SetTrigger("DeathTrigger");
+
+        GameManager.Instance.RegisterDeadEnemy();
 
         StartCoroutine(DeleteCharacter());
     }

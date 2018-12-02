@@ -13,16 +13,20 @@ public enum GameState
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameState currentGameState = GameState.menu;
+    public GameState currentGameState = GameState.arena;
     public CinemachineVirtualCamera cinemachineCamera;
     public float cameraFocusTime = 0.1f;
+
+    public float defaultZPosition;
 
     public List<string> levelNameOrder;
 
     private Vector2 defaultSoftZoneParameters;
 
-    public int baseEnnemyCount = 0;
-    public int currentEnnemyCount = 0;
+    public int baseEnemyCount = 0;
+    public int currentEnemyCount = 0;
+
+    public int currentLevel = 0;
 
     private CinemachineFramingTransposer _cameraBody;
     public CinemachineFramingTransposer cameraBody
@@ -101,17 +105,80 @@ public class GameManager : Singleton<GameManager>
     private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
         InitializeLevel();
+        SetGameState(GameState.arena);
     }
 
     private void InitializeLevel()
     {
-        Debug.Log("Initlalize Level");
-
         CountNumberOfEnnemies();
+        DeathScreenManager.Instance.Reset();
+        
+       // FindObjectOfType<Spawner>().transform.position
     }
 
     public void CountNumberOfEnnemies()
     {
-        baseEnnemyCount = FindObjectsOfType<BaseEnemy>().Count();
+        baseEnemyCount = FindObjectsOfType<BaseEnemy>().Count();
+        currentEnemyCount = baseEnemyCount;
+    }
+
+    public void RegisterDeadEnemy()
+    {
+        currentEnemyCount--;
+
+        if(currentEnemyCount <= 0 && !CrabControler.Instance.isDead)
+        {
+            WinLevel();
+        }
+    }
+
+    public void ManageCharacterDeath()
+    {
+        SetGameState(GameState.menu);
+
+        DeathScreenManager.Instance.LaunchDeathUI();
+    }
+
+    public void WinLevel()
+    {
+        SetGameState(GameState.menu);
+
+        TransitionScreenManager.Instance.LaunchTransitionUI();
+    }
+
+    public void LoadNextLevel()
+    {
+        currentLevel++;
+
+        SceneManager.LoadScene(levelNameOrder[currentLevel]);
+    }
+
+    public void SetGameState(GameState newState)
+    {
+        if(currentGameState == newState)
+        {
+            return;
+        }
+
+        if(newState == GameState.arena)
+        {
+            // launch timer here
+        }
+        if(newState == GameState.menu)
+        {
+            StopAllEnnemy();
+        }
+
+        currentGameState = newState;
+    }
+
+    public void StopAllEnnemy()
+    {
+        BaseEnemy[] enemies = FindObjectsOfType<BaseEnemy>();
+
+        foreach(BaseEnemy enemy in enemies)
+        {
+            enemy.Stop();
+        }
     }
 }

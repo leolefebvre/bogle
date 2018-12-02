@@ -32,17 +32,17 @@ public class Zombie : BaseEnemy
 
     private void ChasePlayer()
     {
-        if(!isDead)
+        if(!isDead && GameManager.Instance.currentGameState == GameState.arena)
         {
             navAgent.destination = CrabControler.Instance.transform.position;
         }
     }
 
-    public override void Die()
+    public override void Stop()
     {
         navAgent.enabled = false;
 
-        base.Die();
+        base.Stop();
     }
 
     public void DamagePlayer()

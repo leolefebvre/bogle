@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeathScreenManager : Singleton<DeathScreenManager>, IResetable
 {
     public GameObject deathUiCanvas;
-    public AnimationClip openingAnimation;
+    //public AnimationClip openingAnimation;
     public AnimationClip closeAnimation;
 
     private Animator _animator;
@@ -40,7 +40,7 @@ public class DeathScreenManager : Singleton<DeathScreenManager>, IResetable
     public void CloseScreen()
     {
         animator.SetTrigger("CloseScreenTrigger");
-        GameManager.Instance.RestartGame();
+        GameManager.Instance.RestartGame(closeAnimation.length);
     }
 
     public void RestartClicked()

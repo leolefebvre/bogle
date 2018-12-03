@@ -58,7 +58,7 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            RestartGame();
+            RestartGame(0f);
         }
     }
 	
@@ -75,10 +75,17 @@ public class GameManager : Singleton<GameManager>
         defaultSoftZoneParameters.y = cameraBody.m_SoftZoneHeight;
     }
 
-    public void RestartGame()
+    public void RestartGame(float screenCloseDuration)
     {
-        SceneManager.LoadScene(levelNameOrder[0]);
+        StartCoroutine(RestartGameWithDelay(screenCloseDuration));
+    }
+
+    IEnumerator RestartGameWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         currentLevel = 0;
+        SceneManager.LoadScene(levelNameOrder[0]);
 
         ResetCommonScene();
     }

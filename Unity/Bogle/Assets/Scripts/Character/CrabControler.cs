@@ -26,11 +26,27 @@ public class CrabControler : Singleton<CrabControler>
     public float invincibilityDuration = 1.0f;
     public ShakeTypes shakeOnTakingHits = ShakeTypes.playerTakesHitShake;
 
+    [Header("Sounds parameters")]
+    public AudioSource characterAudioSource;
+    public AudioClip fireSound;
+    public AudioClip onHitSound;
+    public AudioClip onDeathSound;
+
+    [Header("footsteps sounds cycle parameters")]
+    public AudioSource footstepAudioSource;
+    public AudioClip[] footstepsSounds;
+    [Header("the number of footsteps sounds per second is the Walking Speed")]
+    [Header("times the Foot Steps Speed Ratio")]
+    public float FootStepsSpeedRatio = 1.0f;
+
+    private float _currentTimeSOund = 0f;
+    private float _nextTimeSound = 0f;
+
     #endregion
 
     #region references
 
-    [Space(20f)]
+    [Space(5f)]
     [Header("References")]
     public Animator walkAnimator;
     public CannonControler cannon1;
@@ -40,7 +56,7 @@ public class CrabControler : Singleton<CrabControler>
 
     #region internal logic parameters
 
-    [Space(20f)]
+    [Space(5f)]
     [Header("Internal logic Parameter DON'T TOUCH")]
     public float walkingInput = 0f;
     public float rotatingInput = 0f;
@@ -67,6 +83,7 @@ public class CrabControler : Singleton<CrabControler>
     {
         get { return 1f / currentFireRate; }
     }
+
 
     #endregion
 
@@ -106,6 +123,7 @@ public class CrabControler : Singleton<CrabControler>
     {
         if(isDead || GameManager.Instance.currentGameState != GameState.arena)
         {
+            isMoving = false;
             return;
         }
 
@@ -172,6 +190,8 @@ public class CrabControler : Singleton<CrabControler>
         Vector3 walkingVector = walkAxis * walkingInput * currentWalkingSpeed * Time.deltaTime * shootingSpeedModifier;
 
         transform.Translate(walkingVector);
+
+        ProgressStepCycle();
     }
 
     #endregion
@@ -187,6 +207,7 @@ public class CrabControler : Singleton<CrabControler>
             lastTimeShots = Time.time;
 
             CameraShakeControler.Instance.LaunchShake(shakeOnFire);
+            PlayFeedbackSound(fireSound);
         }
     }
 
@@ -221,6 +242,7 @@ public class CrabControler : Singleton<CrabControler>
             return;
         }
 
+        PlayFeedbackSound(onHitSound);
         isInvincible = true;
 
         StartCoroutine(StopInvicibility());
@@ -235,7 +257,51 @@ public class CrabControler : Singleton<CrabControler>
 
     public void Die ()
     {
+        PlayFeedbackSound(onDeathSound);
         GameManager.Instance.ManageCharacterDeath();
+    }
+
+    #endregion
+
+    #region Sounds
+
+    public void PlayFeedbackSound(AudioClip soundToPlay)
+    {
+        if(soundToPlay == null)
+        {
+            return;
+        }
+
+        characterAudioSource.PlayOneShot(soundToPlay);
+    }
+
+    private void ProgressStepCycle()
+    {
+        if (isMoving)
+        {
+            _currentTimeSOund += FootStepsSpeedRatio * currentWalkingSpeed * Time.deltaTime;
+        }
+
+        if (!(_currentTimeSOund > _nextTimeSound))
+        {
+            return;
+        }
+
+        _nextTimeSound = _currentTimeSOund + 1f;
+
+        PlayFootStepAudio();
+    }
+
+    private void PlayFootStepAudio()
+    {
+        // pick & play a random footstep sound from the array,
+        // excluding sound at index 0
+        int n = Random.Range(1, footstepsSounds.Length);
+        footstepAudioSource.clip = footstepsSounds[n];
+        footstepAudioSource.PlayOneShot(footstepAudioSource.clip);
+        // move picked sound to index 0 so it's not picked next time
+        footstepsSounds[n] = footstepsSounds[0];
+        footstepsSounds[0] = footstepAudioSource.clip;
     }
 
     #endregion

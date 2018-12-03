@@ -5,6 +5,21 @@ using UnityEngine;
 public class VictoryScreenManager : Singleton<VictoryScreenManager>, IResetable
 {
     public GameObject victoryUiCanvas;
+    public AnimationClip closeAnimation;
+
+    private Animator _animator;
+    public Animator animator
+    {
+        get
+        {
+            if (_animator == null)
+            {
+                _animator = GetComponent<Animator>();
+            }
+            return _animator;
+        }
+    }
+
 
     // Use this for initialization
     void Start()
@@ -24,7 +39,7 @@ public class VictoryScreenManager : Singleton<VictoryScreenManager>, IResetable
 
     public void RestartClicked()
     {
-        GameManager.Instance.RestartGame();
+        GameManager.Instance.RestartGame(closeAnimation.length);
     }
 
     public void Reset()

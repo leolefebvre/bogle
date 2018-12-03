@@ -21,7 +21,6 @@ public class Projectile : MonoBehaviour
 
     public AudioClip onExplosionSound;
 
-    private bool isLaunched = false;
     private bool hasAlreadyHit = false;
 
     private float timeToLive = 0f;
@@ -48,8 +47,6 @@ public class Projectile : MonoBehaviour
 
     public void Launch()
     {
-        isLaunched = true;
-
         GetComponent<Rigidbody>().velocity = transform.up * speed;
 
         StartCoroutine(DeleteProjectileAfterDistanceCovered());

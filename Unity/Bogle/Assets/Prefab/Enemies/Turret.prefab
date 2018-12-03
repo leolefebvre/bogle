@@ -315,6 +315,8 @@ MonoBehaviour:
   turretProjectile: {fileID: 1765873586225186, guid: 94a906ffd468b0e4ca7c399fe4de1fe2,
     type: 2}
   shootingPositon: {fileID: 4697027068724118}
+  fireSound: {fileID: 8300000, guid: 025626184f1804642b325ee10a9a2fbb, type: 3}
+  CloseSound: {fileID: 8300000, guid: 941a3ac87622df64b8a52d3af50cf539, type: 3}
   isInvincible: 1
   currentInvicibilityDuration: 0
   isTurretActive: 0

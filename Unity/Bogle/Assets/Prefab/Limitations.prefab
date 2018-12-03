@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 65760938213662256}
   m_Layer: 0
   m_Name: L_Bound
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 65838688698300796}
   m_Layer: 0
   m_Name: D_Bound
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 65400715781585766}
   m_Layer: 0
   m_Name: R_Bound
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 65383049363350212}
   m_Layer: 0
   m_Name: U_Bound
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8

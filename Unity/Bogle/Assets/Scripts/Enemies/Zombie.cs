@@ -19,11 +19,6 @@ public class Zombie : BaseEnemy
             return _navAgent;
         }
     }
-
-    // Use this for initialization
-    void Start () {
-        
-    }
 	
 	// Update is called once per frame
 	void Update () {

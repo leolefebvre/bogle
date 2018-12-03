@@ -161,7 +161,7 @@ public class GameManager : Singleton<GameManager>
     {
         SetGameState(GameState.menu);
 
-        DeathScreenManager.Instance.LaunchDeathUI();
+        DeathScreenManager.Instance.OpenScreen();
     }
 
     public void WinLevel()

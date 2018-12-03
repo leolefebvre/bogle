@@ -5,6 +5,21 @@ using UnityEngine;
 public class DeathScreenManager : Singleton<DeathScreenManager>, IResetable
 {
     public GameObject deathUiCanvas;
+    public AnimationClip openingAnimation;
+    public AnimationClip closeAnimation;
+
+    private Animator _animator;
+    public Animator animator
+    {
+        get
+        {
+            if(_animator == null)
+            {
+                _animator = GetComponent<Animator>();
+            }
+            return _animator;
+        }
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -16,14 +31,21 @@ public class DeathScreenManager : Singleton<DeathScreenManager>, IResetable
         deathUiCanvas.SetActive(false);
     }
 
-    public void LaunchDeathUI()
+    public void OpenScreen()
     {
         deathUiCanvas.SetActive(true);
+        animator.SetTrigger("OpenScreenTrigger");
+    }
+
+    public void CloseScreen()
+    {
+        animator.SetTrigger("CloseScreenTrigger");
+        GameManager.Instance.RestartGame();
     }
 
     public void RestartClicked()
     {
-        GameManager.Instance.RestartGame();
+        CloseScreen();
     }
 
     public void Reset()

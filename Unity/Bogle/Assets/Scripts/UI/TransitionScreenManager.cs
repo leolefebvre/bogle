@@ -46,6 +46,11 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
         transitionCanvas.SetActive(true);
     }
 
+    public void CloseTransitionUI()
+    {
+
+    }
+
     public void OnChoiceClicked(int choiceIndex)
     {
         currentChoice = choiceIndex;

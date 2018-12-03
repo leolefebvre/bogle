@@ -258,6 +258,8 @@ public class CrabControler : Singleton<CrabControler>
     public void Die ()
     {
         PlaySound(onDeathSound);
+        isMoving = false;
+        ManageAnimations();
         GameManager.Instance.ManageCharacterDeath();
     }
 

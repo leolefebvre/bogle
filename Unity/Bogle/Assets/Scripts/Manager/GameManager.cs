@@ -133,8 +133,11 @@ public class GameManager : Singleton<GameManager>
 
         if(spawner == null)
         {
+            Debug.Log("Can't find spawner");
+
             return Vector3.zero;
         }
+
         return spawner.transform.position;
     }
 

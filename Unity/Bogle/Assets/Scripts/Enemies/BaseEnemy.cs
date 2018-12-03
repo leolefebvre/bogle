@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
 {
+    [Header("Base Ennemy Parameter")]
     public int baseHealth = 1;
+
+    [SerializeField]
     protected int currentHealth;
 
     public float deathAnimationDuration;
@@ -14,8 +17,9 @@ public class BaseEnemy : MonoBehaviour
     protected bool isDead = false;
     
 	// Use this for initialization
-	void Start () {
-        currentHealth = baseHealth;
+	void Start ()
+    {
+        Initialize();
 	}
 	
 	// Update is called once per frame
@@ -23,7 +27,12 @@ public class BaseEnemy : MonoBehaviour
 		
 	}
 
-    public void TakeHit(int damage)
+    protected virtual void Initialize()
+    {
+        currentHealth = baseHealth;
+    }
+
+    public virtual void TakeHit(int damage)
     {
         currentHealth -= damage;
 

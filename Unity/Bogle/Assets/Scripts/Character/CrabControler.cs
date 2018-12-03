@@ -206,7 +206,7 @@ public class CrabControler : Singleton<CrabControler>
 
     public void TakeHit(int damage)
     {
-        if(isInvincible)
+        if(isInvincible || GameManager.Instance.currentGameState != GameState.arena)
         {
             return;
         }

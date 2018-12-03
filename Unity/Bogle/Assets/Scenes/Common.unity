@@ -614,11 +614,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4564786098125848, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 4736581790050952, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 4795240821815842, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
       propertyPath: m_LocalScale.y

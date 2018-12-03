@@ -41,7 +41,7 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
         currentChoice = -1;
     }
 
-    public void LaunchTransitionUI()
+    public void OpenTransitionUI()
     {
         transitionCanvas.SetActive(true);
     }

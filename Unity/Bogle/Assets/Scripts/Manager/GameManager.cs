@@ -174,7 +174,7 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            TransitionScreenManager.Instance.LaunchTransitionUI();
+            TransitionScreenManager.Instance.OpenTransitionUI();
         }
     }
 

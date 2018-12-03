@@ -18,6 +18,10 @@ public class Turret : BaseEnemy
     public GameObject turretProjectile;
     public Transform shootingPositon;
 
+    [Header("Sounds")]
+    public AudioClip fireSound;
+    public AudioClip CloseSound;
+
 
     [Header("Internal Logic Parameters DON'T TOUCH")]
     public bool isInvincible = true;
@@ -63,7 +67,7 @@ public class Turret : BaseEnemy
         }
         isTurretActive = false;
 
-        StopAllCoroutines();
+        //StopAllCoroutines();
         Reset();
     }
 
@@ -96,6 +100,7 @@ public class Turret : BaseEnemy
 
         StartCoroutine(WaitBeforeShooting());
         StartCoroutine(WaitBeforeLaunchNextAttack());
+        StartCoroutine(WaitBeforeCloseSound());
     }
 
     IEnumerator WaitBeforeShooting()
@@ -117,6 +122,7 @@ public class Turret : BaseEnemy
 
         GameObject projectile = Instantiate(turretProjectile, shootingPositon.position, shootingPositon.rotation);
         projectile.GetComponent<Projectile>().Launch(maxRange, Team.Enemy);
+        PlaySound(fireSound);
     }
 
     IEnumerator WaitBeforeLaunchNextAttack()
@@ -145,10 +151,17 @@ public class Turret : BaseEnemy
 
         if (isTurretActive)
         {
-            isInvincible = true;
+            ActivateInvincibility();
         }
     }
 
+    public void ActivateInvincibility()
+    {
+        if (isTurretActive)
+        {
+            isInvincible = true;
+        }
+    }
 
     public override void TakeHit(int damage)
     {
@@ -158,5 +171,15 @@ public class Turret : BaseEnemy
         }
 
         base.TakeHit(damage);
+    }
+
+    IEnumerator WaitBeforeCloseSound()
+    {
+        yield return new WaitForSeconds(attackAnimation.length);
+
+        if(!isDead)
+        {
+            PlaySound(CloseSound);
+        }
     }
 }

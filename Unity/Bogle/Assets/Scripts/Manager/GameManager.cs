@@ -77,17 +77,17 @@ public class GameManager : Singleton<GameManager>
 
     public void RestartGame(float screenCloseDuration)
     {
+        currentLevel = 0;
+        SceneManager.LoadScene(levelNameOrder[0]);
+
         StartCoroutine(RestartGameWithDelay(screenCloseDuration));
     }
 
     IEnumerator RestartGameWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
-        currentLevel = 0;
-        SceneManager.LoadScene(levelNameOrder[0]);
-
         ResetCommonScene();
+        ReceivedRightToLaunchArenaMode();
     }
 
     public void ResetCommonScene()
@@ -131,7 +131,7 @@ public class GameManager : Singleton<GameManager>
         CrabControler.Instance.transform.position = spawnPosition;
         CrabControler.Instance.transform.eulerAngles = defaultRotation;
 
-        SetGameState(GameState.arena);
+        
     }
 
     private Vector3 GetSpawnerPosition()
@@ -181,15 +181,27 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            TransitionScreenManager.Instance.OpenTransitionUI();
+            TransitionScreenManager.Instance.OpenScreen();
         }
     }
 
-    public void LoadNextLevel()
+    public void LoadNextLevel(float screenCloseDuration)
     {
         currentLevel++;
-
         SceneManager.LoadScene(levelNameOrder[currentLevel]);
+
+        StartCoroutine(WaitToLaunchArenaMode(screenCloseDuration));
+    }
+
+    IEnumerator WaitToLaunchArenaMode(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ReceivedRightToLaunchArenaMode();
+    }
+
+    public void ReceivedRightToLaunchArenaMode()
+    {
+        SetGameState(GameState.arena);
     }
 
     public void SetGameState(GameState newState)

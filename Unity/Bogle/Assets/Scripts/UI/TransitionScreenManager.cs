@@ -9,6 +9,22 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
 
     public List<ChoiceUI> choicesUi;
     public Button confirmButton;
+    public Text levelCountDown;
+
+    public AnimationClip closeAnimation;
+
+    private Animator _animator;
+    public Animator animator
+    {
+        get
+        {
+            if (_animator == null)
+            {
+                _animator = GetComponent<Animator>();
+            }
+            return _animator;
+        }
+    }
 
     public int currentChoice = -1;
 
@@ -41,14 +57,15 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
         currentChoice = -1;
     }
 
-    public void OpenTransitionUI()
+    public void OpenScreen()
     {
         transitionCanvas.SetActive(true);
+        animator.SetTrigger("OpenScreenTrigger");
     }
 
-    public void CloseTransitionUI()
+    public void CloseScreen()
     {
-
+        animator.SetTrigger("CloseScreenTrigger");
     }
 
     public void OnChoiceClicked(int choiceIndex)
@@ -69,8 +86,10 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
         StatsManager.Instance.ReduceStat(choicesUi[currentChoice].linkedStat);
 
         DisableConfirmButton();
-        GameManager.Instance.LoadNextLevel();
-        transitionCanvas.SetActive(false);
+
+        GameManager.Instance.LoadNextLevel(closeAnimation.length);
+
+        CloseScreen();
     }
 
     public void Reset()

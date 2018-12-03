@@ -262,7 +262,7 @@ MonoBehaviour:
   projectileDamage: 1
   hitAnimationTime: 0.5
   animator: {fileID: 95806852614117800}
-  onExplosionSound: {fileID: 8300000, guid: da0a694ea2d8488489547073e69ed3e3, type: 3}
+  onExplosionSound: {fileID: 8300000, guid: 68641c1951241de40bac8339459cc1c1, type: 3}
   audioSource: {fileID: 82897368642131736}
 --- !u!136 &136251142842828424
 CapsuleCollider:

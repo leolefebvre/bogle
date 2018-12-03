@@ -245,7 +245,7 @@ MonoBehaviour:
   deathAnimationDuration: 1.6
   animator: {fileID: 95758441708774968}
   shakeOnDeath: 2
-  onDeathSound: {fileID: 8300000, guid: 85843920d58eae946a2fb5735ffb1250, type: 3}
+  onDeathSound: {fileID: 8300000, guid: e9c76ca080c02fc4e9e40ce06c778233, type: 3}
   audioSource: {fileID: 82102523090840432}
   AttackDamage: 1
 --- !u!136 &136964263743524834

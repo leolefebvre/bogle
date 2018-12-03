@@ -207,7 +207,7 @@ public class CrabControler : Singleton<CrabControler>
             lastTimeShots = Time.time;
 
             CameraShakeControler.Instance.LaunchShake(shakeOnFire);
-            PlayFeedbackSound(fireSound);
+            PlaySound(fireSound);
         }
     }
 
@@ -242,7 +242,7 @@ public class CrabControler : Singleton<CrabControler>
             return;
         }
 
-        PlayFeedbackSound(onHitSound);
+        PlaySound(onHitSound);
         isInvincible = true;
 
         StartCoroutine(StopInvicibility());
@@ -257,7 +257,7 @@ public class CrabControler : Singleton<CrabControler>
 
     public void Die ()
     {
-        PlayFeedbackSound(onDeathSound);
+        PlaySound(onDeathSound);
         GameManager.Instance.ManageCharacterDeath();
     }
 
@@ -265,7 +265,7 @@ public class CrabControler : Singleton<CrabControler>
 
     #region Sounds
 
-    public void PlayFeedbackSound(AudioClip soundToPlay)
+    public void PlaySound(AudioClip soundToPlay)
     {
         if(soundToPlay == null)
         {

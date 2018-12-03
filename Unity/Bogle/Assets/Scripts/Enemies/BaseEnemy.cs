@@ -6,16 +6,18 @@ public class BaseEnemy : MonoBehaviour
 {
     [Header("Base Ennemy Parameter")]
     public int baseHealth = 1;
-
-    [SerializeField]
     protected int currentHealth;
 
     public float deathAnimationDuration;
     public Animator animator;
     public ShakeTypes shakeOnDeath;
 
+    public AudioClip onDeathSound;
+
     protected bool isDead = false;
-    
+
+    public AudioSource audioSource;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -60,6 +62,7 @@ public class BaseEnemy : MonoBehaviour
 
         CameraShakeControler.Instance.LaunchShake(shakeOnDeath);
         animator.SetTrigger("DeathTrigger");
+        PlaySound(onDeathSound);
 
         GameManager.Instance.RegisterDeadEnemy();
 
@@ -71,5 +74,15 @@ public class BaseEnemy : MonoBehaviour
         yield return new WaitForSeconds(deathAnimationDuration);
 
         Destroy(gameObject);
+    }
+
+    public void PlaySound(AudioClip soundToPlay)
+    {
+        if (soundToPlay == null)
+        {
+            return;
+        }
+
+        audioSource.PlayOneShot(soundToPlay);
     }
 }

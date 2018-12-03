@@ -19,13 +19,17 @@ public class Projectile : MonoBehaviour
     public float hitAnimationTime = 0.5f;
     public Animator animator;
 
-    public bool isLaunched = false;
-    public bool hasAlreadyHit = false;
+    public AudioClip onExplosionSound;
 
-    public float timeToLive = 0f;
+    private bool isLaunched = false;
+    private bool hasAlreadyHit = false;
 
-	// Use this for initialization
-	void Start () {
+    private float timeToLive = 0f;
+
+    public AudioSource audioSource;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -55,7 +59,7 @@ public class Projectile : MonoBehaviour
     {
         timeToLive = maxDistance / speed;
 
-        yield return new WaitForSeconds(maxDistance / speed);
+        yield return new WaitForSeconds(timeToLive);
 
         ProjectileHits();
     }
@@ -71,6 +75,7 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Collider>().enabled = false;
         animator.SetTrigger("projectileHits");
+        PlaySound(onExplosionSound);
 
         StartCoroutine(DeleteProjectile());
     }
@@ -100,5 +105,15 @@ public class Projectile : MonoBehaviour
             CrabControler.Instance.TakeHit(projectileDamage);
             ProjectileHits();
         }
+    }
+
+    public void PlaySound(AudioClip soundToPlay)
+    {
+        if (soundToPlay == null)
+        {
+            return;
+        }
+
+        audioSource.PlayOneShot(soundToPlay);
     }
 }

@@ -91,6 +91,8 @@ public class Projectile : MonoBehaviour
 
         if(projectileTeam == Team.Player && other.tag == "Ennemy")
         {
+            Debug.Log(name + " hits " + other.name);
+
             other.GetComponent<BaseEnemy>().TakeHit(projectileDamage);
             ProjectileHits();
         }

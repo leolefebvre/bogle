@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour
 
         hasAlreadyHit = true;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-
+        GetComponent<Collider>().enabled = false;
         animator.SetTrigger("projectileHits");
 
         StartCoroutine(DeleteProjectile());

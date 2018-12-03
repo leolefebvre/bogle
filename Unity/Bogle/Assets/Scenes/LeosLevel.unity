@@ -4396,11 +4396,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4408,38 +4408,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.014932389
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.7069491
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.7069491
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.014932389
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989329477189360, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 135181420998296268, guid: c988d0068b70e404cb1596b326d7fd26,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114864216991072196, guid: c988d0068b70e404cb1596b326d7fd26,
-        type: 2}
-      propertyPath: invicibilityTimeMin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114864216991072196, guid: c988d0068b70e404cb1596b326d7fd26,
-        type: 2}
-      propertyPath: invicibilityTimeMax
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c988d0068b70e404cb1596b326d7fd26, type: 2}

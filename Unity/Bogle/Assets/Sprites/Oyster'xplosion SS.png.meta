@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,6 +84,28 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -93,16 +115,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1126
+        width: 1297
         height: 1314
-      alignment: 9
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79fffea9e6e511f4e9b27bb74261111e
+      spriteID: f61c3a6995859654db934b9e999ebcfe
       vertices: []
       indices: 
       edges: []
@@ -111,18 +133,18 @@ TextureImporter:
       name: Oyster'xplosion SS_1
       rect:
         serializedVersion: 2
-        x: 1271
+        x: 1297
         y: 0
-        width: 1145
+        width: 1297
         height: 1314
-      alignment: 9
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 756b8d7c16b15114b9e817f8e9b33395
+      spriteID: 9a292559591289141b66573ddb376adb
       vertices: []
       indices: 
       edges: []
@@ -131,18 +153,18 @@ TextureImporter:
       name: Oyster'xplosion SS_2
       rect:
         serializedVersion: 2
-        x: 2453
-        y: 2
-        width: 1320
-        height: 1312
-      alignment: 9
+        x: 2594
+        y: 0
+        width: 1297
+        height: 1314
+      alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 20, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9babf81dac0165144af5b4d83c550dd0
+      spriteID: 51457fe9beaf00144b06b7e95a42628f
       vertices: []
       indices: 
       edges: []
@@ -151,18 +173,18 @@ TextureImporter:
       name: Oyster'xplosion SS_3
       rect:
         serializedVersion: 2
-        x: 3822
-        y: 2
-        width: 1274
-        height: 1312
-      alignment: 9
+        x: 3891
+        y: 0
+        width: 1297
+        height: 1314
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f90baf31ecf65947b4a7a7717102187
+      spriteID: 3f7c2f734281ed64bae0d57a8865ca35
       vertices: []
       indices: 
       edges: []

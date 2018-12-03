@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 703643d0f339f86478ea2bb8654d1e91, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 69a0dc3fbfe3a1e4987cf5b881012e36, type: 2}
 --- !u!1001 &36922670
 Prefab:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4325092117814546, guid: 9aac2201773e3e64492d8829b34f5bf4, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4325092117814546, guid: 9aac2201773e3e64492d8829b34f5bf4, type: 2}
       propertyPath: m_LocalRotation.y
@@ -410,11 +410,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4325092117814546, guid: 9aac2201773e3e64492d8829b34f5bf4, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4325092117814546, guid: 9aac2201773e3e64492d8829b34f5bf4, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325092117814546, guid: 9aac2201773e3e64492d8829b34f5bf4, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aac2201773e3e64492d8829b34f5bf4, type: 2}

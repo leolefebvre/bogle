@@ -608,31 +608,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114991099029636994, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: footStepLenght
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114991099029636994, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: stepInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114991099029636994, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: NumberOfFootstepsPerSecond
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114991099029636994, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: onDeathSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c270fa95790385345a79107f2d13399d, type: 3}
-    - target: {fileID: 114991099029636994, guid: 1f704ba356f3d01408bc1024f7af6ee0,
-        type: 2}
-      propertyPath: FootStepsSpeedRatio
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f704ba356f3d01408bc1024f7af6ee0, type: 2}
   m_IsPrefabAsset: 0

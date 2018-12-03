@@ -152,26 +152,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4548057191536484, guid: 8a13a6c8271c18c4b81a50458177fea9, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.0000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4548057191536484, guid: 8a13a6c8271c18c4b81a50458177fea9, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.0000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4548057191536484, guid: 8a13a6c8271c18c4b81a50458177fea9, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.0000021
-      objectReference: {fileID: 0}
     - target: {fileID: 1783229491407696, guid: 8a13a6c8271c18c4b81a50458177fea9, type: 2}
       propertyPath: m_Name
       value: Zombie (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 195760669940394564, guid: 8a13a6c8271c18c4b81a50458177fea9,
-        type: 2}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a13a6c8271c18c4b81a50458177fea9, type: 2}

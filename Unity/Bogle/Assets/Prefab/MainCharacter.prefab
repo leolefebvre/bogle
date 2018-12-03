@@ -550,18 +550,16 @@ MonoBehaviour:
   invincibilityDuration: 0.25
   shakeOnTakingHits: 1
   characterAudioSource: {fileID: 82428458392675206}
-  fireSound: {fileID: 8300000, guid: 025626184f1804642b325ee10a9a2fbb, type: 3}
-  onHitSound: {fileID: 8300000, guid: 941a3ac87622df64b8a52d3af50cf539, type: 3}
+  fireSound: {fileID: 8300000, guid: 67903cc3f152c6c49a77a8d929ed1180, type: 3}
+  onHitSound: {fileID: 8300000, guid: a2d2b4af66408954dbb7727bbc55ce02, type: 3}
+  onDeathSound: {fileID: 0}
   footstepAudioSource: {fileID: 82957737484959846}
   footstepsSounds:
-  - {fileID: 8300000, guid: 4ca8ff99e1a85a945a7d0782efcb2fc0, type: 3}
-  - {fileID: 8300000, guid: 9a00bd007e120ca4ab57ed3fe78d6cda, type: 3}
-  - {fileID: 8300000, guid: 487a41d68ed472c40908484e41e05c62, type: 3}
-  - {fileID: 8300000, guid: aef894384d4cfd0428f7d24e8d215319, type: 3}
-  footStepLenght: 1
-  stepInterval: 2
-  _stepCycle: 0
-  _nextStepCycle: 0
+  - {fileID: 8300000, guid: d5976097922ad7640800bc319c683b4e, type: 3}
+  - {fileID: 8300000, guid: f32d0f3801fd45149bd8f8b6e0b0634f, type: 3}
+  - {fileID: 8300000, guid: e58a71478148d614bb5c5255a64bcc76, type: 3}
+  - {fileID: 8300000, guid: 9e76f725b64462d4a94c7eb9437ec6c2, type: 3}
+  FootStepsSpeedRatio: 2
   walkAnimator: {fileID: 95734378627216566}
   cannon1: {fileID: 114219465271187994}
   cannon2: {fileID: 114621342076109500}

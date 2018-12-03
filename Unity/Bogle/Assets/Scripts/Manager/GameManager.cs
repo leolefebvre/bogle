@@ -177,7 +177,7 @@ public class GameManager : Singleton<GameManager>
 
         if(currentLevel == levelNameOrder.Count - 1)
         {
-            VictoryScreenManager.Instance.LaunchVictoryUI();
+            VictoryScreenManager.Instance.OpenScreen();
         }
         else
         {

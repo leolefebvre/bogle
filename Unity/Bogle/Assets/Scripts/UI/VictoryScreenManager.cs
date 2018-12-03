@@ -32,13 +32,16 @@ public class VictoryScreenManager : Singleton<VictoryScreenManager>, IResetable
         victoryUiCanvas.SetActive(false);
     }
 
-    public void LaunchVictoryUI()
+    public void OpenScreen()
     {
         victoryUiCanvas.SetActive(true);
+
+        animator.SetTrigger("OpenScreenTrigger");
     }
 
     public void RestartClicked()
     {
+        animator.SetTrigger("CloseScreenTrigger");
         GameManager.Instance.RestartGame(closeAnimation.length);
     }
 

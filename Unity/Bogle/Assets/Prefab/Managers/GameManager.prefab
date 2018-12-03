@@ -52,12 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNameOrder:
-  - LeosLevel
-  - LeosLevel 2
-  - LeosLevel
-  - LeosLevel 2
-  - LeosLevel
-  - LeosLevel 2
+  - Arena Tuto
+  - Arena 1
+  - Arena 2
+  - Arena 3
+  - Arena 4
+  - Arena 5
   - LeosLevel
   - LeosLevel 2
   cinemachineCamera: {fileID: 0}

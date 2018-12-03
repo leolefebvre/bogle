@@ -127,7 +127,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.623
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -140,7 +140,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -240,11 +240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1333a7c1be91e47a43eecf7012727b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 3
+  baseHealth: 2
   deathAnimationDuration: 0.75
   animator: {fileID: 95062129776249314}
   shakeOnDeath: 2
-  onDeathSound: {fileID: 8300000, guid: c270fa95790385345a79107f2d13399d, type: 3}
+  onDeathSound: {fileID: 8300000, guid: a7ef96d51c9cf3d47b033dbeda626f1e, type: 3}
   audioSource: {fileID: 82001266279272430}
 --- !u!136 &136004836984363632
 CapsuleCollider:

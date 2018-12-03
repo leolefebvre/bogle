@@ -304,7 +304,7 @@ MonoBehaviour:
   deathAnimationDuration: 0.5
   animator: {fileID: 95033709905457868}
   shakeOnDeath: 2
-  onDeathSound: {fileID: 8300000, guid: c270fa95790385345a79107f2d13399d, type: 3}
+  onDeathSound: {fileID: 8300000, guid: e9c76ca080c02fc4e9e40ce06c778233, type: 3}
   audioSource: {fileID: 82728481854680314}
   maxRotatingSpeed: 5
   maxRange: 40

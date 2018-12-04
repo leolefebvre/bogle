@@ -217,7 +217,7 @@ Prefab:
     - target: {fileID: 224919771649733268, guid: 3eda3856cca2fb943901f13efa6436f5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224919771649733268, guid: 3eda3856cca2fb943901f13efa6436f5,
         type: 2}
@@ -247,7 +247,7 @@ Prefab:
     - target: {fileID: 224346142357422588, guid: 3eda3856cca2fb943901f13efa6436f5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224346142357422588, guid: 3eda3856cca2fb943901f13efa6436f5,
         type: 2}
@@ -277,7 +277,7 @@ Prefab:
     - target: {fileID: 224259680158383114, guid: 3eda3856cca2fb943901f13efa6436f5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224259680158383114, guid: 3eda3856cca2fb943901f13efa6436f5,
         type: 2}
@@ -299,7 +299,48 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 224919771649733268, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 114634819374889862, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224346142357422588, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 224346142357422588, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 114419195136048016, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224259680158383114, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 224259680158383114, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114192088803134446, guid: 3eda3856cca2fb943901f13efa6436f5,
+        type: 2}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114216284705500922, guid: 3eda3856cca2fb943901f13efa6436f5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 3eda3856cca2fb943901f13efa6436f5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &333640729
@@ -664,6 +705,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 333640731}
     m_Modifications:
+    - target: {fileID: 114267437247385094, guid: 569108115305d9045ad32ed048573cf4,
+        type: 2}
+      propertyPath: levelNameOrder.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4892421423166828, guid: 569108115305d9045ad32ed048573cf4, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -696,6 +742,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114267437247385094, guid: 569108115305d9045ad32ed048573cf4,
+        type: 2}
+      propertyPath: levelNameOrder.Array.data[6]
+      value: LeosLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267437247385094, guid: 569108115305d9045ad32ed048573cf4,
+        type: 2}
+      propertyPath: levelNameOrder.Array.data[7]
+      value: LeosLevel 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114267437247385094, guid: 569108115305d9045ad32ed048573cf4,
+        type: 2}
+      propertyPath: cinemachineCamera
+      value: 
+      objectReference: {fileID: 1488842737}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 569108115305d9045ad32ed048573cf4, type: 2}
   m_IsPrefabAsset: 0
@@ -890,6 +951,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1349134368}
   m_CullTransparentMesh: 0
+--- !u!114 &1488842737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114957779502013976, guid: 0a39bb42c37136a458fcf0367d73e4f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1781500494}
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
 --- !u!1 &1505075907
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,14 +16,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
     void Start()
     {
         Canvas.SetActive(true);
-        if (SceneManager.sceneCount > 1)
-        {
-            LaunchGame();
-        }
-        else
-        {
-            HealthDisplayManager.Instance.gameObject.SetActive(false);
-        }
+        HealthDisplayManager.Instance.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame

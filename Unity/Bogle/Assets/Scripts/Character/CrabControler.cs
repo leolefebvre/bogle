@@ -63,9 +63,6 @@ public class CrabControler : Singleton<CrabControler>
     public float shootInput = 0f;
     public bool isMoving = false;
     public bool isInvincible = false;
-
-    private Vector3 basePosition;
-    private Quaternion baseRotation;
     
     public bool isDead
     {
@@ -90,8 +87,6 @@ public class CrabControler : Singleton<CrabControler>
     // Use this for initialization
     void Start()
     {
-        basePosition = transform.position;
-        baseRotation = transform.rotation;
         Initialize();
     }
 

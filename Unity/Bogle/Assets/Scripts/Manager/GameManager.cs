@@ -186,7 +186,7 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            TransitionScreenManager.Instance.OpenScreen();
+            TransitionScreenManager.Instance.OpenScreen(levelNameOrder.Count - currentLevel - 1);
         }
     }
 

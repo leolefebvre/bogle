@@ -57,10 +57,11 @@ public class TransitionScreenManager : Singleton<TransitionScreenManager>, IRese
         currentChoice = -1;
     }
 
-    public void OpenScreen()
+    public void OpenScreen(int remainingLevels)
     {
         transitionCanvas.SetActive(true);
         animator.SetTrigger("OpenScreenTrigger");
+        levelCountDown.text = remainingLevels + " levels to go";
     }
 
     public void CloseScreen()

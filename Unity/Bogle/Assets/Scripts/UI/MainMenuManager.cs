@@ -10,9 +10,12 @@ public class MainMenuManager : Singleton<MainMenuManager>
 
     public AudioClip GameMusic;
 
+    public GameObject Canvas;
+
     // Use this for initialization
     void Start()
     {
+        Canvas.SetActive(true);
         if (SceneManager.sceneCount > 1)
         {
             LaunchGame();

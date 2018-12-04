@@ -114,8 +114,6 @@ public class CrabControler : Singleton<CrabControler>
     public void Reset()
     {
         Initialize();
-        transform.position = basePosition;
-        transform.rotation = baseRotation;
     }
 
     // Update is called once per frame
@@ -125,6 +123,11 @@ public class CrabControler : Singleton<CrabControler>
         {
             isMoving = false;
             return;
+        }
+
+        if(Input.GetKeyDown("n"))
+        {
+            Die();
         }
 
         ManageInputs();

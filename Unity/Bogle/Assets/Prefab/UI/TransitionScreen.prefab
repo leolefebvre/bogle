@@ -1345,7 +1345,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 142e1cd39c72fa947b709c629d310443, type: 3}
-    m_FontSize: 30
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 2
@@ -1353,10 +1353,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Less Speed
+  m_Text: Less fire rate
 --- !u!114 &114218355881421374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2166,8 +2166,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Less Speed
 --- !u!114 &114560532071656412
@@ -2673,8 +2673,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Less Range
 --- !u!114 &114907546396737556

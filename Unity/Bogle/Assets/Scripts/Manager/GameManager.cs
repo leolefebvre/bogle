@@ -55,10 +55,11 @@ public class GameManager : Singleton<GameManager>
         if(SceneManager.sceneCount > 1)
         {
             InitializeLevel();
+            ReceivedRightToLaunchArenaMode();
         }
         else
         {
-            RestartGame(0f);
+            LoadFirstScene();
         }
     }
 	
@@ -75,10 +76,15 @@ public class GameManager : Singleton<GameManager>
         defaultSoftZoneParameters.y = cameraBody.m_SoftZoneHeight;
     }
 
-    public void RestartGame(float screenCloseDuration)
+    public void LoadFirstScene()
     {
         currentLevel = 0;
         SceneManager.LoadScene(levelNameOrder[0]);
+    }
+
+    public void RestartGame(float screenCloseDuration)
+    {
+        LoadFirstScene();
 
         StartCoroutine(RestartGameWithDelay(screenCloseDuration));
     }
@@ -130,7 +136,6 @@ public class GameManager : Singleton<GameManager>
 
         CrabControler.Instance.transform.position = spawnPosition;
         CrabControler.Instance.transform.eulerAngles = defaultRotation;
-
         
     }
 
@@ -181,7 +186,7 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            TransitionScreenManager.Instance.OpenScreen();
+            TransitionScreenManager.Instance.OpenScreen(levelNameOrder.Count - currentLevel - 1);
         }
     }
 

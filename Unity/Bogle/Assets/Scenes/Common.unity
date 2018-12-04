@@ -429,6 +429,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114520050251983020, guid: ad34a1d3fd1cf6f4983c6a36fbb53831,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114420155679665130, guid: ad34a1d3fd1cf6f4983c6a36fbb53831,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114212360757244312, guid: ad34a1d3fd1cf6f4983c6a36fbb53831,
+        type: 2}
+      propertyPath: m_Text
+      value: Less Fire rate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad34a1d3fd1cf6f4983c6a36fbb53831, type: 2}
   m_IsPrefabAsset: 0
